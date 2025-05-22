@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hushin/core/colors/app_colors.dart';
 import 'package:hushin/data/common/widgets/basicapp_button.dart';
+import 'package:hushin/features/spalsh/splash.dart';
 import 'package:hushin/features/theme/style/theme_style.dart';
 
 class GetStarted extends StatefulWidget {
@@ -47,7 +48,15 @@ class _GetStartedState extends State<GetStarted> {
           Positioned(
             bottom: height * 0.2,
             left: width * 0.3,
-            child: BasicappButton(onpressed: () {}, title: 'Get Started'),
+            child: BasicappButton(
+              onpressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (_) => Splash()),
+                );
+              },
+              title: 'Get Started',
+            ),
           ),
         ],
       ),
