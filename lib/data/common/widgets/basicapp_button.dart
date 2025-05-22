@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hushin/core/colors/app_colors.dart';
 
 class BasicappButton extends StatelessWidget {
   final VoidCallback onpressed;
@@ -13,10 +14,21 @@ class BasicappButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onpressed,
-      child: Text(title),
-      style: ElevatedButton.styleFrom(minimumSize: Size(80, 40)),
+    return Material(
+      elevation: 10,
+      borderRadius: BorderRadius.circular(30),
+      child: ElevatedButton(
+        onPressed: onpressed,
+        style: ElevatedButton.styleFrom(minimumSize: Size(100, 60)),
+        child: Text(
+          title,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: AppColors.whitecolor,
+            fontSize: 25,
+          ),
+        ),
+      ),
     );
   }
 }
