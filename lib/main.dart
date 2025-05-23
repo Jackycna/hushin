@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hushin/features/auth/cubit/auth_cubit.dart';
 import 'package:hushin/features/spalsh/splash.dart';
 import 'package:hushin/features/theme/cubit/theme_cubit.dart';
 import 'package:hushin/features/theme/style/theme_style.dart';
@@ -24,7 +25,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [BlocProvider(create: (_) => ThemeCubit())],
+      providers: [
+        BlocProvider(create: (_) => ThemeCubit()),
+        BlocProvider(create: (_) => AuthCubit()),
+      ],
       child: BlocBuilder<ThemeCubit, ThemeMode>(
         builder:
             (context, themeMode) => MaterialApp(

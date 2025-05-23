@@ -6,6 +6,7 @@ class AppTheme {
     primaryColor: AppColors.primarycolor,
     scaffoldBackgroundColor: AppColors.whitecolor,
     brightness: Brightness.light,
+    textTheme: TextTheme(bodyLarge: TextStyle(color: AppColors.blackcolor)),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primarycolor,
@@ -22,6 +23,7 @@ class AppTheme {
     primaryColor: AppColors.primarycolor,
     scaffoldBackgroundColor: AppColors.blackcolor,
     brightness: Brightness.dark,
+    textTheme: TextTheme(bodyLarge: TextStyle(color: AppColors.blackcolor)),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primarycolor,

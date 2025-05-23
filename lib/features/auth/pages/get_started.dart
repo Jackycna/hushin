@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hushin/core/colors/app_colors.dart';
 import 'package:hushin/data/common/widgets/basicapp_button.dart';
+import 'package:hushin/features/auth/cubit/auth_cubit.dart';
 import 'package:hushin/features/spalsh/splash.dart';
 import 'package:hushin/features/theme/style/theme_style.dart';
 
@@ -50,6 +52,7 @@ class _GetStartedState extends State<GetStarted> {
             left: width * 0.3,
             child: BasicappButton(
               onpressed: () {
+                context.read<AuthCubit>().createUser();
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (_) => Splash()),
