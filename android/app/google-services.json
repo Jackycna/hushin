@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "827245595553",
+    "project_id": "hushin-6d8dd",
+    "storage_bucket": "hushin-6d8dd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827245595553:android:d78cddc8bced2a66f099e0",
+        "android_client_info": {
+          "package_name": "com.example.hushin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcBcGVWBWbZI5qQ0BHfD0ZFHE92_2e5NU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hushin/data/common/widgets/basicapp_button.dart';
-import 'package:hushin/data/common/widgets/toogle_bar.dart';
-import 'package:hushin/features/theme/cubit/theme_cubit.dart';
-import 'package:lottie/lottie.dart';
-import 'package:sidebarx/sidebarx.dart';
+import 'package:hushin/features/navigatonbar/navigation_cubit.dart';
+import 'package:hushin/features/navigatonbar/navigation_state.dart';
+import 'package:hushin/pages/callspage/calls_page.dart';
+import 'package:hushin/pages/profile/profile_page.dart';
+import 'package:hushin/pages/root/root_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,37 +16,46 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
-    final themeCubit = context.read<ThemeCubit>();
     return Scaffold(
-      body: Stack(
-        children: [
-          Positioned(
-            top: height * 0.2,
-            left: width * 0.01,
-            child: Lottie.asset(
-              'assets/animation/loading.json',
-              height: 400,
-              width: 400,
-            ),
-          ),
-          Positioned(
-            top: height * 0.07,
-            right: width * 0.06,
-            child: ToogleBar(),
-          ),
-          Positioned(
-            top: height * 0.7,
-            right: width * 0.26,
-            child: BasicappButton(onpressed: () {}, title: 'Create Room'),
-          ),
-          Positioned(
-            top: height * 0.8,
-            right: width * 0.29,
-            child: BasicappButton(onpressed: () {}, title: 'Join Room'),
-          ),
-        ],
+      body: BlocBuilder<NavigationCubit, NavigationState>(
+        builder: (context, state) {
+          switch (state.index) {
+            case 0:
+              return RootPage();
+            case 1:
+              return CallsPage();
+            case 2:
+              return ProfilePage();
+          }
+          return SizedBox();
+        },
+      ),
+
+      bottomNavigationBar: BlocBuilder<NavigationCubit, NavigationState>(
+        builder: (context, state) {
+          return NavigationBar(
+            destinations: [
+              NavigationDestination(
+                icon: Icon(Icons.chat_bubble_outline),
+                label: 'chats',
+                selectedIcon: Icon(Icons.chat),
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.call_end_outlined),
+                label: 'Calls',
+                selectedIcon: Icon(Icons.call),
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.person_outline),
+                label: 'Profile',
+                selectedIcon: Icon(Icons.person),
+              ),
+            ],
+            selectedIndex: state.index,
+            onDestinationSelected:
+                (value) => context.read<NavigationCubit>().selectedIndex(value),
+          );
+        },
       ),
     );
   }
