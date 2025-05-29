@@ -1,6 +1,48 @@
 # hushin
 
-A new Flutter project.
+✨ Features
+
+🔐 Firebase Integration
+
+Firebase Authentication for secure user login/signup
+
+Firebase Storage for storing media/files
+
+
+🎨 Hydrated Cubit for Theme Persistence
+
+Theme preference (light/dark mode) is saved and restored using hydrated_cubit
+
+
+🗨️ 1:1 Chat System
+
+Real-time chat with bubble UI
+
+Clean and readable message layout
+
+
+📞 Agora Voice Call Integration
+
+Seamless one-on-one voice calling functionality
+
+Integrated with real-time call status handling
+
+
+🧠 BLoC Pattern with Clean Architecture
+
+Organized project using layered architecture for better scalability
+
+BLoC for state management across the app
+
+
+🧰 GetX for Global Variables
+
+Used GetX for lightweight and reactive global state access
+
+
+🎨 Modern & Clean UI
+
+Professional UI with consistent design and responsive layouts
 
 ## Getting Started
 
