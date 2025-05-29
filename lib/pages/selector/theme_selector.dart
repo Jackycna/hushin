@@ -1,8 +1,7 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hushin/core/appimages/app_image.dart';
-import 'package:hushin/core/colors/app_colors.dart';
+
 import 'package:hushin/core/common/widgets/basicapp_button.dart';
 import 'package:hushin/pages/getstarted/get_started.dart';
 import 'package:hushin/features/theme/cubit/theme_cubit.dart';
@@ -58,10 +57,7 @@ class _ThemeSelectorState extends State<ThemeSelector> {
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color:
-                              sunclick
-                                  ? Colors.white.withOpacity(0.3)
-                                  : Colors.black.withOpacity(0.3),
+                          color: sunclick ? Colors.white : Colors.black,
                         ),
                         child: IconButton(
                           onPressed: () {
@@ -78,10 +74,7 @@ class _ThemeSelectorState extends State<ThemeSelector> {
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color:
-                              moonclick
-                                  ? Colors.black.withOpacity(0.3)
-                                  : Colors.white.withOpacity(0.3),
+                          color: moonclick ? Colors.black : Colors.white,
                         ),
                         child: IconButton(
                           onPressed: () {

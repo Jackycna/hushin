@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hushin/core/colors/app_colors.dart';
 import 'package:hushin/features/navigatonbar/navigation_cubit.dart';
 import 'package:hushin/features/navigatonbar/navigation_state.dart';
-import 'package:hushin/pages/callspage/calls_page.dart';
+import 'package:hushin/pages/calllogs/call_logs.dart';
 import 'package:hushin/pages/profile/profile_page.dart';
 import 'package:hushin/pages/root/root_page.dart';
 
@@ -17,18 +18,21 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocBuilder<NavigationCubit, NavigationState>(
-        builder: (context, state) {
-          switch (state.index) {
-            case 0:
-              return RootPage();
-            case 1:
-              return CallsPage();
-            case 2:
-              return ProfilePage();
-          }
-          return SizedBox();
-        },
+      // appBar: AppBar(backgroundColor: AppColors.primarycolor, title: Text('')),
+      body: SafeArea(
+        child: BlocBuilder<NavigationCubit, NavigationState>(
+          builder: (context, state) {
+            switch (state.index) {
+              case 0:
+                return RootPage();
+              case 1:
+                return CallLogs();
+              case 2:
+                return ProfilePage();
+            }
+            return SizedBox();
+          },
+        ),
       ),
 
       bottomNavigationBar: BlocBuilder<NavigationCubit, NavigationState>(

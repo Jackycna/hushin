@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:hushin/core/colors/app_colors.dart';
 
 class BasicappButton extends StatelessWidget {
   final VoidCallback onpressed;

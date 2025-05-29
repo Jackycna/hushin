@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:hushin/core/appimages/app_image.dart';
 import 'package:hushin/core/colors/app_colors.dart';
 import 'package:hushin/core/common/widgets/basicapp_button.dart';
 import 'package:hushin/pages/auth/sign_in.dart';
@@ -186,14 +184,50 @@ class _GetStartedState extends State<GetStarted> {
             ),
           ),
           Positioned(
-            top: height * 0.7,
-            left: width * 0.02,
-            child: Text(
-              'Your Growth Engine Starts Here',
-
-              style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
+            top: height * 0.3,
+            left: width * 0.4,
+            child: Material(
+              elevation: 5,
+              borderRadius: BorderRadius.circular(40),
+              child: Container(
+                height: height * 0.09,
+                width: width * 0.2,
+                decoration: BoxDecoration(
+                  color: AppColors.primarycolor,
+                  borderRadius: BorderRadius.circular(40),
+                ),
+                child: Center(
+                  child: Text(
+                    'Honesty',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
             ),
           ),
+          Positioned(
+            top: height * 0.25,
+            left: width * 0.7,
+            child: Material(
+              elevation: 5,
+              borderRadius: BorderRadius.circular(40),
+              child: Container(
+                height: height * 0.09,
+                width: width * 0.2,
+                decoration: BoxDecoration(
+                  color: AppColors.primarycolor,
+                  borderRadius: BorderRadius.circular(40),
+                ),
+                child: Center(
+                  child: Text(
+                    'Faith',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ),
+          ),
+
           Positioned(
             bottom: height * 0.15,
             left: width * 0.10,
