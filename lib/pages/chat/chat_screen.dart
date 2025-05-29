@@ -73,6 +73,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     '007eJxTYFA7Ybh2ov9+u1t9bYH28epK3ttd7OxbCzmyzPL9jmqLlSswWJgZGhkZG5ubpRmlmZgnWiSmGZolG1lYGhqmpRiZmBkd/Gie0RDIyLD74gIGRigE8TkYkjMSS+INjYwZGADAPR1z',
                 channelName: 'chat_123',
               );
+
               context.read<CallBloc>().startcall(call);
               Navigator.push(
                 context,

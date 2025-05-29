@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hushin/core/appimages/app_image.dart';
-import 'package:hushin/pages/getstarted/get_started.dart';
+
+import 'package:hushin/pages/selector/theme_selector.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -20,7 +21,9 @@ class _SplashState extends State<Splash> {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (BuildContext context) => GetStarted()),
+            MaterialPageRoute(
+              builder: (BuildContext context) => ThemeSelector(),
+            ),
           );
         },
         child: Stack(
